@@ -33,27 +33,42 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>${variables.name == null ? "Micaela" : variables.name} ${
-    variables.lastname == null ? "De Rosa" : variables.lastname
-  } </h1>
+          <h1>${variables.name == null ? "Micaela" : variables.name}${
+    variables.lastName == null ? "De Rosa" : variables.lastName
+  }</h1>
           <h2>${variables.role == null ? "sin trabajo" : variables.role} </h2>
           <h3>${variables.city == null ? "City" : variables.city} ${
     variables.country == null ? "Country" : variables.country
   }</h3>
-          
-          <ul class= ${variables.socialMediaPosition}>
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+  
+
+
+          <ul class=${variables.socialMediaPosition}>
+            <li><a href="https://twitter.com/${
+              variables.twitter
+            }"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${
+              variables.github
+            }"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/in/${
+              variables.linkedin
+            }"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${
+              variables.instagram
+            }"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
-    `;
+ 
+ 
+ 
+        `;
+
+  if (variables.twitter != null) variables.twitter;
+  if (variables.github != null) variables.github;
+  if (variables.linkedin != null) variables.linkedin;
+  if (variables.instagram != null) variables.instagram;
 }
 
-/**
- * Don't change any of the lines below, here is where we do the logic for the dropdowns
- */
 window.onload = function() {
   window.variables = {
     // if includeCover is true the algorithm should show the cover image
